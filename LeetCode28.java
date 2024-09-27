@@ -1,7 +1,6 @@
-
-    //haystack = "leetcode", needle = "leeto" //-1
-    //haystack = "sadbutsad", needle = "sad" // 0
-
+//haystack = "leetcode", needle = "leeto"   //-1
+//haystack = "sadbutsad", needle = "sad"    // 0
+//haystack = "mississippi",needle = "issip" // 4
 public class LeetCode28{
   static int strStr(String haystack, String needle){
    for(int i=0;i<haystack.length()-needle.length()+1;i++){
