@@ -19,11 +19,26 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LeetCode3{
     static public int lengthOfLongestSubstring(String s) {
-     return 1;   
+       int start = 0;
+       int end = 0;
+       int max = 0;
+        List<Character>  list = new ArrayList<Character>();
+        while(end<s.length())
+        if(!list.contains(s.charAt(end))){
+        list.add(s.charAt(end++));
+        max = Math.max(max,list.size());
+        }
+        else{
+            list.remove(Character.valueOf(s.charAt(start++)));
+        }
+        return max;   
     }
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("ngdfywefdjhsg"));
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
     }
 }
